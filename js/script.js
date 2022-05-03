@@ -8,7 +8,7 @@ function Book(title,author,numberOfPages,alreadyRead)
     this.title = title
     this.author = author
     this.pages = numberOfPages
-    this.read = `${this.read ? 'Yes' : 'No'}` 
+    this.read = `${alreadyRead ? 'Yes' : 'No'}` 
 
     this.info = function(){
         return title + ' by ' + author + ' is ' + this.pages + ' pages long, whose read status is '
