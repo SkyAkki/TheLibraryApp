@@ -11,15 +11,18 @@
 <body>
     <form>
         <div>
-            <label for="name">Name: </label>
+            <label for="name">Title Of The Book: </label>
+            <br>
             <input id="name" type="text" required>
         </div>
         <div>
-            <label for="author">Author: </label>
+            <label for="author">Author's Name: </label>
+            <br>
             <input id="author" type="text" required>
         </div>
         <div>
             <label for="pages">Number of Pages : </label>
+            <br>
             <input id="pages" type="text" required>
         </div>
         <div class="toggleLabel">
@@ -28,7 +31,7 @@
             <label class="toggleLabel" for="readStatus"><p class="labelTitle">Read Already</p></label>
         </div>
         <div>
-            <button onclick="addBookToLibrary()" type="button">Add</button>
+            <button class="addButton" onclick="addBookToLibrary()" type="button">Add To Library</button>
         </div>
     </form>
     <main id="displayGrid">
