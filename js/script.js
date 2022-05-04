@@ -3,14 +3,17 @@ let counter = 0
 
 let gridArea = document.getElementById('displayGrid');
 
-function Book(title,author,numberOfPages,alreadyRead)
+class Book
 {
-    this.title = title
-    this.author = author
-    this.pages = numberOfPages
-    this.read = `${alreadyRead ? 'Yes' : 'No'}` 
+    constructor(title,author,numberOfPages,alreadyRead)
+    {
+        this.title = title
+        this.author = author
+        this.pages = numberOfPages
+        this.read = `${alreadyRead ? 'Yes' : 'No'}` 
+    }
 
-    this.info = function(){
+    info(){
         return title + ' by ' + author + ' is ' + this.pages + ' pages long, whose read status is '
          + this.read
     }
@@ -47,8 +50,11 @@ function showBookCard()
     let authorEntryDiv = document.createElement('div')
     let pageCountEntryDiv = document.createElement('div')
     let readStatusDiv = document.createElement('div')
+    let deleteIcon = document.createElement('img')
 
     bookCard.className = 'card'
+    deleteIcon.src = 'images/delete.png'
+    deleteIcon.className = 'deleteIcon'
 
     bookEntryDiv.textContent += myLibrary[counter].title
     authorEntryDiv.textContent += myLibrary[counter].author
@@ -60,6 +66,7 @@ function showBookCard()
     bookCard.appendChild(authorEntryDiv)
     bookCard.appendChild(pageCountEntryDiv)
     bookCard.appendChild(readStatusDiv)
+    bookCard.appendChild(deleteIcon)
 
     gridArea.appendChild(bookCard)
 }
