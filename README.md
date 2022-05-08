@@ -6,3 +6,5 @@
 3. Task: Remove the sliding button logic for now. Add it after better understanding of Absolute positioning.
 
 4. Even though script.js is in different folder, the positioning defied for the src attribute starts as if image is reached by the index.html page.
+
+5. Having negative spread radius adds a natural-looking depth to hover elements.

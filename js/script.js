@@ -2,6 +2,7 @@ let myLibrary = [];
 let counter = 0
 
 let gridArea = document.getElementById('displayGrid');
+let gridAreaArray = []
 
 class Book
 {
@@ -39,8 +40,8 @@ function addBookToLibrary()
         authorEntry.value = ''
         pageCountEntry.value = ''
         readStatus.checked = false
+        refreshGrid();
     }
-
 }
 
 function showBookCard()
@@ -51,11 +52,11 @@ function showBookCard()
     let pageCountEntryDiv = document.createElement('div')
     let readStatusDiv = document.createElement('div')
     let deleteIcon = document.createElement('img')
-
+    
     bookCard.className = 'card'
     deleteIcon.src = 'images/delete.png'
     deleteIcon.className = 'deleteIcon'
-
+    
     bookEntryDiv.textContent += myLibrary[counter].title
     authorEntryDiv.textContent += myLibrary[counter].author
     pageCountEntryDiv.textContent += myLibrary[counter].pages
@@ -69,4 +70,13 @@ function showBookCard()
     bookCard.appendChild(deleteIcon)
 
     gridArea.appendChild(bookCard)
+}
+
+function refreshGrid(){
+    gridAreaArray = document.querySelectorAll("main > div")
+    gridAreaArray.forEach(element => {
+        element.lastChild.addEventListener("click",function(){
+            element.remove()
+        })
+    })
 }
